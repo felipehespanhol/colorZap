@@ -1,5 +1,7 @@
 var game;
-var useLandscape=false;
+var score;
+var useLandscape = false;
+var soundOn = true;
 
 window.onload = function () {
   var isMobile=navigator.userAgent.indexOf("Mobile");
@@ -23,6 +25,7 @@ window.onload = function () {
   }
 
   game.state.add("StateMain", StateMain);
+  game.state.add("StateOver", StateOver);
   game.state.add("StateTitle", StateTitle);
   game.state.start("StateTitle");
 }
