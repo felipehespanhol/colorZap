@@ -14,7 +14,22 @@ var StateTitle = {
     // good guys, explosions
     this.logo = game.add.sprite(game.world.centerX, 180, "logo");
     this.logo.anchor.set(0.5, 0.5);
+    this.btnStart = game.add.button(
+                      game.world.centerX,
+                      game.world.height - 150,
+                      "buttons",
+                      this.startGame,
+                      this,
+                      7,
+                      6,
+                      7
+                    );
+    this.btnStart.anchor.set(0.5, 0.5);
     this.setListeners();
+  },
+
+  startGame: function() {
+    game.state.start("StateMain");
   },
 
   setListeners: function() {
